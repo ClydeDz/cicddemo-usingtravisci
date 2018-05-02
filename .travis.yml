@@ -1,9 +1,7 @@
 language: csharp
 solution: "./WebDemoAzureCD/WebDemoAzureCD.sln"
 install:
-  - nuget restore ./WebDemoAzureCD/WebDemoAzureCD.sln
-  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+  - travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./WebDemoAzureCD/WebDemoAzureCD.sln
 script:
-  - xbuild /p:Configuration=Release ./WebDemoAzureCD/WebDemoAzureCD.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./WebDemoAzureCD/WebDemoAzureCD.Tests/bin/Release/WebDemoAzureCD.Tests.dll
-  
+  - xbuild ./WebDemoAzureCD/WebDemoAzureCD.sln
+  - mono ./WebDemoAzureCD/packages/xunit.runner.console*/tools/xunit.console.exe ./WebDemoAzureCD/WebDemoAzureCD.Tests/bin/Debug/WebDemoAzureCD.Tests.dll
