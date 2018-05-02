@@ -1,8 +1,9 @@
 language: csharp
-solution: WebDemoAzureCD\WebDemoAzureCD.sln
+solution: "./WebDemoAzureCD/WebDemoAzureCD.sln"
 install:
-  - nuget restore WebDemoAzureCD\WebDemoAzureCD.sln
+  - nuget restore ./WebDemoAzureCD/WebDemoAzureCD.sln
   - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release WebDemoAzureCD\WebDemoAzureCD.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./WebDemoAzureCD.Tests/bin/Release/WebDemoAzureCD.Tests.dll
+  - xbuild /p:Configuration=Release ./WebDemoAzureCD/WebDemoAzureCD.sln
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./WebDemoAzureCD/WebDemoAzureCD.Tests/bin/Release/WebDemoAzureCD.Tests.dll
+  
