@@ -1,5 +1,5 @@
 language: csharp
 solution: "./WebDemoAzureCD/WebDemoAzureCD.sln"
-script:
-  - xbuild /p:Configuration=Release ./WebDemoAzureCD/WebDemoAzureCD.sln
-  - mono ./WebDemoAzureCD/packages/xunit.runners.*/tools/xunit.console.clr4.exe ./WebDemoAzureCD/WebDemoAzureCD.Tests/bin/Release/WebDemoAzureCD.Tests.dll
+#script:
+  #- xbuild /p:Configuration=Release ./WebDemoAzureCD/WebDemoAzureCD.sln
+  #- mono ./WebDemoAzureCD/packages/xunit.runners.*/tools/xunit.console.clr4.exe ./WebDemoAzureCD/WebDemoAzureCD.Tests/bin/Release/WebDemoAzureCD.Tests.dll
